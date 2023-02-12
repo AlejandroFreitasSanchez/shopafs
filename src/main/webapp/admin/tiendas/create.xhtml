@@ -24,6 +24,10 @@
                             <p:inputText id="name" value="#{tiendaController.selected.nombre}" title="name" required="true" requiredMessage="requerido"/>
                             <h:outputLabel value="Direccion" for="direccion" />
                             <p:inputText id="direccion" value="#{tiendaController.selected.direccion}" title="direccion" required="true" requiredMessage="requerido"/>
+                            <h:outputLabel value="Descripcion" for="descripcion" />
+                            <p:inputText id="descripcion" value="#{tiendaController.selected.descripcion}" title="descripcion" required="true" requiredMessage="requerido"/>
+                            <h:outputLabel value="Coordenadas" for="coordenadas" />
+                            <p:inputText id="coordenadas" value="#{tiendaController.selected.coordenadas}" title="coordenadas" required="true" requiredMessage="requerido"/>
                             <h:outputLabel value="Activo" for="activo" />
                             <p:selectBooleanCheckbox  id="activo" value="#{tiendaController.selected.activo}" itemLabel="Activo"/> 
                             <h:outputLabel value="Categoria" for="categoria" />
@@ -34,6 +38,16 @@
                                                itemLabel="#{tipo.nombre}"
                                                itemDisabled="#{!tipo.activo}"/>
                             </p:selectOneMenu>
+                            
+                            <h:outputLabel value="Promocion" for="promocion" />
+                            <p:selectOneMenu id="promocion" value="#{propiedadEditView.promocion}" >
+                                <f:selectItem itemLabel="Select One" itemValue=""/>
+                                <f:selectItems value="#{propiedadEditView.promociones}" var="promocion"
+                                               itemValue="#{promocion.nombre}"
+                                               itemLabel="#{promocion.nombre}"
+                                               />
+                            </p:selectOneMenu>
+                            
                             <p:commandButton action="#{tiendaController.cancel}" value="Cancelar" icon="pi pi-times"  styleClass="ui-button-warning"/>
 
                             <p:commandButton action="#{tiendaController.add}" value="Alta" icon="pi pi-refresh" styleClass="ui-button-success"/>

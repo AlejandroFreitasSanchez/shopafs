@@ -11,7 +11,7 @@
     </h:head>
     <h:body>
         <ui:composition template="../../templates/admin.xhtml">
-            <ui:param name="parametro" value="Categorias>>Editar"/>
+            <ui:param name="parametro" value="Tiendas>>Editar"/>
             <ui:define name="contenido">
 
                 <p:outputPanel id="manage-product-content" class="ui-fluid">
@@ -23,14 +23,28 @@
                             <p:inputText id="name" value="#{tiendaController.selected.nombre}" title="name" required="true" requiredMessage="requerido"/>
                             <h:outputLabel value="Direccion" for="direccion" />
                             <p:inputText id="direccion" value="#{tiendaController.selected.direccion}" title="direccion" required="true" requiredMessage="requerido"/>
+                            <h:outputLabel value="Descripcion" for="descripcion" />
+                            <p:inputText id="descripcion" value="#{tiendaController.selected.descripcion}" title="descripcion" required="true" requiredMessage="requerido"/>
+                            <h:outputLabel value="Coordenadas" for="coordenadas" />
+                            <p:inputText id="coordenadas" value="#{tiendaController.selected.coordenadas}" title="coordenadas" required="true" requiredMessage="requerido"/>
                             <h:outputLabel value="Categoria" for="categoria" />
                             <p:selectOneMenu id="categoria" value="#{propiedadEditView.tipo}" >
                                 <f:selectItem itemLabel="Select One" itemValue=""/>
-                                <f:selectItems value="#{propiedadEditView.tipos}" var="tipo"
-                                               itemValue="#{tipo.nombre}"
-                                               itemLabel="#{tipo.nombre}"
-                                               itemDisabled="#{!tipo.activo}"/>
+                                <f:selectItems value="#{propiedadEditView.tipos}" var="categoria"
+                                               itemValue="#{categoria.nombre}"
+                                               itemLabel="#{categoria.nombre}"
+                                               itemDisabled="#{!categoria.activo}"/>
                             </p:selectOneMenu>
+
+                            <h:outputLabel value="Promocion" for="promocion" />
+                            <p:selectOneMenu id="promocion" value="#{propiedadEditView.promocion}" >
+                                <f:selectItem itemLabel="Select One" itemValue=""/>
+                                <f:selectItems value="#{propiedadEditView.promociones}" var="promocion"
+                                               itemValue="#{promocion.nombre}"
+                                               itemLabel="#{promocion.nombre}"
+                                               />
+                            </p:selectOneMenu>
+
                             <h:outputLabel value="Activo" for="activo" />
                             <p:selectBooleanCheckbox  id="activo" value="#{tiendaController.selected.activo}" itemLabel="Activo"/>  
                             <p:commandButton action="#{tiendaController.cancel}" value="Cancelar" icon="pi pi-times"  styleClass="ui-button-warning"  process="@this"/>

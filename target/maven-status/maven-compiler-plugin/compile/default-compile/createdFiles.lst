@@ -1,6 +1,5 @@
 com\mycompany\shopafs\controller\OpcionController.class
 com\mycompany\shopafs\model\Opcion.class
-com\mycompany\shopafs\model\Propiedad.class
 com\mycompany\shopafs\views\PropiedadEditView.class
 com\mycompany\shopafs\model\ICopyable.class
 com\mycompany\shopafs\controller\Controller.class

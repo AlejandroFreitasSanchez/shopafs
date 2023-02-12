@@ -9,13 +9,18 @@ package com.mycompany.shopafs.model;
  * @author Pedro
  */
 public class Promocion implements Comparable<Promocion>, Cloneable {
-     private String nombre;
-    private boolean activo;
+
+    private String nombre;
+    
     private int id;
-    public Promocion(){
-        this.id=-1;
+    private String descripcion;
+    private String fechaInicio;
+    private String fechaFin;
+    public Promocion() {
+        this.id = -1;
     }
-     /**
+
+    /**
      * @return the nombre
      */
     public String getNombre() {
@@ -29,19 +34,7 @@ public class Promocion implements Comparable<Promocion>, Cloneable {
         this.nombre = nombre;
     }
 
-    /**
-     * @return the activo
-     */
-    public boolean isActivo() {
-        return activo;
-    }
-
-    /**
-     * @param activo the activo to set
-     */
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
+   
 
     /**
      * @return the id
@@ -59,21 +52,68 @@ public class Promocion implements Comparable<Promocion>, Cloneable {
 
     @Override
     public int compareTo(Promocion o) {
-        if(o==null)
+        if (o == null) {
             return -1;
-        else{
-            if(o.getId()==this.id)
+        } else {
+            if (o.getId() == this.id) {
                 return 0;
-            else
+            } else {
                 return 1;
+            }
         }
     }
-     @Override
-    protected Object clone(){
-        Promocion l= new Promocion();
-        l.activo=this.activo;
-        l.id=this.id;
-        l.nombre=this.nombre;
+
+    @Override
+    protected Object clone() {
+        Promocion l = new Promocion();
+      
+        l.id = this.id;
+        l.nombre = this.nombre;
+        l.descripcion = this.descripcion;
+        l.fechaInicio = this.fechaInicio;
+        l.fechaFin = this.fechaFin;
         return l;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the fechaInicio
+     */
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    /**
+     * @param fechaInicio the fechaInicio to set
+     */
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    /**
+     * @return the fechaFin
+     */
+    public String getFechaFin() {
+        return fechaFin;
+    }
+
+    /**
+     * @param fechaFin the fechaFin to set
+     */
+    public void setFechaFin(String fechaFin) {
+        this.fechaFin = fechaFin;
     }
 }

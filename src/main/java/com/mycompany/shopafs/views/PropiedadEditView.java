@@ -8,6 +8,7 @@ import com.mycompany.shopafs.controller.OpcionController;
 import com.mycompany.shopafs.controller.TiendaController;
 
 import com.mycompany.shopafs.controller.CategoriaController;
+import com.mycompany.shopafs.controller.PromocionController;
 
 import com.mycompany.shopafs.model.Promocion;
 import com.mycompany.shopafs.model.Opcion;
@@ -51,6 +52,8 @@ public class PropiedadEditView implements Serializable {
     @Inject
     private CategoriaController categoriaController;
     @Inject
+    private PromocionController promocionController;
+    @Inject
     private OpcionController opcionController;
     @Inject
     private TiendaController tiendaController;
@@ -78,6 +81,14 @@ public class PropiedadEditView implements Serializable {
         }
 
     }
+    public String getPromocion() {
+        if (this.tienda.getPromocion()!= null) {
+            return this.tienda.getPromocion().getNombre();
+        } else {
+            return "";
+        }
+
+    }
 
     /**
      * @param t the t to set
@@ -88,6 +99,15 @@ public class PropiedadEditView implements Serializable {
         }).findFirst();
         if (!consulta.isEmpty()) {
             this.tienda.setCategoria(consulta.get());
+        }
+    }
+    
+    public void setPromocion(String item) {
+        Optional<Promocion> consulta = this.promocionController.getItems().stream().filter(element -> {
+            return element.getNombre().equals(item);
+        }).findFirst();
+        if (!consulta.isEmpty()) {
+            this.tienda.setPromocion(consulta.get());
         }
     }
 
@@ -178,6 +198,9 @@ public class PropiedadEditView implements Serializable {
     public List<Categoria> getTipos() {
         return this.categoriaController.getItems();
     }
+    public List<Promocion> getPromociones() {
+        return this.promocionController.getItems();
+    }
 
     /**
      * @return the propiedad
@@ -207,7 +230,9 @@ public class PropiedadEditView implements Serializable {
                 p.setPromocion(tienda.getPromocion());
                 p.setOpcion(tienda.getOpcion());
                 p.setCategoria(tienda.getCategoria());
-                p.setPrecio(tienda.getPrecio());
+                
+                p.setCoordenadas(tienda.getCoordenadas());
+                p.setDescripcion(tienda.getDescripcion());
                 this.tiendaController.setSelected(null);
                 return "sucess";
             } else {
@@ -238,9 +263,9 @@ public class PropiedadEditView implements Serializable {
         return "sucess";
     }
 
-    public String precreate() {
+    /*public String precreate() {
         return "imageadd";
-    }
+    }*/
 
     
 }

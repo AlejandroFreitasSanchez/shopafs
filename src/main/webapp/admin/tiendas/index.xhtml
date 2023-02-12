@@ -22,8 +22,22 @@
                     <p:column headerText="Name">
                         <h:outputText value="#{tienda.nombre}" />
                     </p:column>
+                    
                     <p:column headerText="Direccion">
                         <h:outputText value="#{tienda.direccion}" />
+                    </p:column>
+                    <p:column headerText="Descripcion">
+                        <h:outputText value="#{tienda.descripcion}" />
+                    </p:column>
+                    <p:column headerText="Coordenadas">
+                        <h:outputText value="#{tienda.coordenadas}" />
+                    </p:column>
+                    <p:column headerText="Categoria">
+                        <h:outputText value="#{tienda.categoria.nombre}" />
+                    </p:column>
+                    
+                    <p:column headerText="Promocion">
+                        <h:outputText value="#{tienda.promocion.nombre}" />
                     </p:column>
                     
                     <p:column headerText="Activo">

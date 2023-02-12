@@ -16,6 +16,7 @@ import jakarta.faces.event.ValueChangeEvent;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -27,8 +28,7 @@ import java.util.Optional;
 public class TiendaController extends AbstractController<Tienda> {
 
     @Inject
-    PromocionController promocionController;
-
+    private PromocionController promocionController;
     @Inject
     private CategoriaController categoriaController;
     @Inject
@@ -50,20 +50,30 @@ public class TiendaController extends AbstractController<Tienda> {
         this.create();
         this.getSelected().setActivo(true);
         //this.getSelected().setId(-1);
-        this.getSelected().setNombre("Mercadona");
-
+        
+        this.getSelected().setNombre("Ikea");
+        this.getSelected().setDireccion("Calle san marcos");
+        this.getSelected().setDescripcion("Ikea es una empresa nordica de muebles");
+        this.getSelected().setCoordenadas("2323d");
+        
         this.add();
 
         this.create();
         this.getSelected().setActivo(true);
         //this.getSelected().setId(-2);
-        this.getSelected().setNombre("Dia");
+        this.getSelected().setNombre("Hiperber");
+         this.getSelected().setDireccion("plaza del sol");
+        this.getSelected().setDescripcion("Hiperber es una cadena de supermercados de comina y articulos del hogar");
+        this.getSelected().setCoordenadas("2323awd");
         this.add();
 
         this.create();
         this.getSelected().setActivo(true);
         //this.getSelected().setId(3);
-        this.getSelected().setNombre("Consum");
+        this.getSelected().setNombre("Zara");
+         this.getSelected().setDireccion("Las habaneras");
+        this.getSelected().setDescripcion("Cadena de ropa fast fashion perteneciente a inditex");
+        this.getSelected().setCoordenadas("232d3d");
         this.add();
     }
 
@@ -114,4 +124,5 @@ public class TiendaController extends AbstractController<Tienda> {
         }
         return "sucess";
     }
+    
 }

@@ -16,6 +16,8 @@ public class Tienda implements Cloneable {
     private String nombre;
     private String direccion;
     private int precio;
+    private String descripcion;
+    private String coordenadas;
     private Categoria categoria;
     private Opcion opcion;
     private Promocion promocion;
@@ -30,6 +32,7 @@ public class Tienda implements Cloneable {
         this.direccion = "";
         this.activo = true;
         this.categoria = new Categoria();
+        this.promocion = new Promocion();
     }
 
     public String getDireccion() {
@@ -95,7 +98,19 @@ public class Tienda implements Cloneable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    public String getDescripcion(){
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
     
+    public String getCoordenadas(){
+        return coordenadas;
+    }
+    public void setCoordenadas(String coordenadas){
+        this.coordenadas = coordenadas;
+    }
 
     @Override
     public Object clone() {
@@ -104,6 +119,8 @@ public class Tienda implements Cloneable {
         p.setDireccion(direccion);
         p.setActivo(activo);
         p.setPrecio(precio);
+        p.setCoordenadas(coordenadas);
+        p.setDescripcion(descripcion);
         //copia superficial
         p.setPromocion(promocion);
         p.setOpcion(opcion);

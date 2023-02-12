@@ -43,6 +43,10 @@
             <from-outcome>tiendas</from-outcome>
             <to-view-id>/admin/tiendas/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>promociones</from-outcome>
+            <to-view-id>/admin/promociones/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <!-- categorias -->
     <navigation-rule>
@@ -87,108 +91,46 @@
        
     </navigation-rule>
     
-    
    
-    <!--provincias-->
+    <!--promociones-->
     <navigation-rule>
-        <from-view-id>/admin/provincias/index.xhtml</from-view-id>
+        <from-view-id>/admin/promociones/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>edit</from-outcome>
-            <to-view-id>/admin/provincias/edit.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/edit.xhtml</to-view-id>
         </navigation-case>
-        
-         
         <navigation-case>
             <from-outcome>remove</from-outcome>
-            <to-view-id>/admin/provincias/index.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/deleted.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>create</from-outcome>
-            <to-view-id>/admin/provincias/create.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/create.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/admin/provincias/edit.xhtml</from-view-id>
+        <from-view-id>/admin/promociones/edit.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>sucess</from-outcome>
-            <to-view-id>/admin/provincias/index.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>remove</from-outcome>
-            <to-view-id>/admin/provincias/edit.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>edit</from-outcome>
-            <to-view-id>/admin/localidades/edit.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>create</from-outcome>
-            <to-view-id>/admin/localidades/create.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>failure</from-outcome>
-            <to-view-id>/admin/provincias/edit.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/edit.xhtml</to-view-id>
         </navigation-case>
        
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/admin/provincias/create.xhtml</from-view-id>
+        <from-view-id>/admin/promociones/create.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>sucess</from-outcome>
-            <to-view-id>/admin/provincias/index.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>failure</from-outcome>
-            <to-view-id>/admin/provincias/create.xhtml</to-view-id>
-        </navigation-case>
-       
-    </navigation-rule>
-   
-   
-  
-   
-   
-    <!--localidades-->
-    <navigation-rule>
-        <from-view-id>/admin/localidades/index.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>edit</from-outcome>
-            <to-view-id>/admin/localidades/edit.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>remove</from-outcome>
-            <to-view-id>/admin/localidades/index.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>create</from-outcome>
-            <to-view-id>/admin/localidades/create.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <navigation-rule>
-        <from-view-id>/admin/localidades/edit.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>sucess</from-outcome>
-            <to-view-id>/admin/provincias/edit.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>failure</from-outcome>
-            <to-view-id>/admin/localidades/edit.xhtml</to-view-id>
-        </navigation-case>
-       
-    </navigation-rule>
-    
-    <navigation-rule>
-        <from-view-id>/admin/localidades/create.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>sucess</from-outcome>
-            <to-view-id>/admin/provincias/edit.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>failure</from-outcome>
-            <to-view-id>/admin/localidades/edit.xhtml</to-view-id>
+            <to-view-id>/admin/promociones/edit.xhtml</to-view-id>
         </navigation-case>
        
     </navigation-rule>
