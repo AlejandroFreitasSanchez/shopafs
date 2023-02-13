@@ -24,20 +24,12 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
 
-    <!--general-->
+    <!--general admin-->
     <navigation-rule>
         <from-view-id>/admin/*</from-view-id>
         <navigation-case>
             <from-outcome>categorias</from-outcome>
             <to-view-id>/admin/categorias/index.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>opciones</from-outcome>
-            <to-view-id>/admin/opciones/index.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>provincias</from-outcome>
-            <to-view-id>/admin/provincias/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>tiendas</from-outcome>
@@ -47,7 +39,43 @@
             <from-outcome>promociones</from-outcome>
             <to-view-id>/admin/promociones/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>categoriasPublic</from-outcome>
+            <to-view-id>/public/categorias/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>tiendasPublic</from-outcome>
+            <to-view-id>/public/tiendas/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>promocionesPublic</from-outcome>
+            <to-view-id>/public/promociones/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
+    
+    <!--general public-->
+    <navigation-rule>
+        <from-view-id>/public/*</from-view-id>
+        <navigation-case>
+            <from-outcome>categoriasPublic</from-outcome>
+            <to-view-id>/public/categorias/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>tiendasPublic</from-outcome>
+            <to-view-id>/public/tiendas/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>promocionesPublic</from-outcome>
+            <to-view-id>/public/promociones/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>categorias</from-outcome>
+            <to-view-id>/admin/categorias/index.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+   
     <!-- categorias -->
     <navigation-rule>
         <from-view-id>/admin/categorias/index.xhtml</from-view-id>
@@ -62,6 +90,10 @@
         <navigation-case>
             <from-outcome>create</from-outcome>
             <to-view-id>/admin/categorias/create.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>categorias</from-outcome>
+            <to-view-id>/admin/categorias/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
